@@ -15,12 +15,16 @@ const homeRoutes = require('./Routes/home-routes');
 
 const adminRoutes = require('./Routes/admin-routes');
 
+const uploadImageRoutes = require('./Routes/image-routes');
+
 
 app.use('/api/auth', authRoutes);
 
 app.use('/api/home', homeRoutes);
 
 app.use('/api/admin', adminRoutes);
+
+app.use('/api/image', uploadImageRoutes);
 
 const PORT = process.env.PORT || 3000;
 
