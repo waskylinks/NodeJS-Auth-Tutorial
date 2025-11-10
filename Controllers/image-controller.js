@@ -40,8 +40,30 @@ const uploadImageController = async (req, res) => {
             message: 'Some error occurred while uploading image. Please try again.'
         });
     }
-}
+};
+
+//controller for fetching all images 
+const fetchImagesController = async(req, res) => {
+    try{
+        const images = await Image.find({});
+
+        if (images) {
+            res.status(200).json({
+                success: true,
+                data: images,
+            });
+        }
+
+    } catch (e) {
+        console.error('Error fetching image', e);
+        res.status(500).json({
+            success: false,
+            message: 'Some error occurred while fetching images. Please try again.'
+        });
+    }
+};
 
 module.exports = {
     uploadImageController,
+    fetchImagesController
 };
