@@ -24,6 +24,8 @@ router.post(
 router.get('/get', authMiddleware, fetchImagesController);
 
 //delete image route
+//6690c71711adc4bf58660d59c
+
 router.delete('/:id', authMiddleware, adminMiddleware, deleteImageController);
 
 
